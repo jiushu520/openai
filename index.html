@@ -12,63 +12,22 @@
             width: 100%;
             height: 100%;
         }
-        .container {
-            width: 100%;
-            height: 100%;
-            margin: auto;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative;
-            resize: both;
-            overflow: auto;
-        }
-        .resizer {
-            width: 10px;
-            height: 10px;
-            background: #000;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            cursor: se-resize;
-        }
         iframe {
             width: 100%;
-            height: 100%;
+            height: 90%;
             border: none;
+            display: block;
+        }
+        header {
+            text-align: left;
+            font-size: 15px;
+            padding: 10px;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <div class="container" id="resizable">
-        玖数人工智能
-        <iframe src="https://app.nextchat.dev/"></iframe>
-        <div class="resizer"></div>
-    </div>
-    <script>
-        const resizable = document.getElementById('resizable');
-        const resizer = resizable.querySelector('.resizer');
-
-        resizer.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            document.addEventListener('mousemove', resize);
-            document.addEventListener('mouseup', stopResize);
-        });
-
-        function resize(e) {
-            resizable.style.width = e.clientX + 'px';
-            resizable.style.height = e.clientY + 'px';
-        }
-
-        function stopResize() {
-            document.removeEventListener('mousemove', resize);
-            document.removeEventListener('mouseup', stopResize);
-        }
-
-        // Set container to 96% of the screen on load
-        window.addEventListener('load', () => {
-            resizable.style.width = window.innerWidth * 0.96 + 'px';
-            resizable.style.height = window.innerHeight * 0.96 + 'px';
-        });
-    </script>
+    <header>玖数人工智能</header>
+    <iframe src="https://app.nextchat.dev/"></iframe>
 </body>
 </html>
